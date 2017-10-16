@@ -3,5 +3,8 @@
     <string name="sub_app_name">(Flower Fortune-Telling)</string>
     <string name="developer">SkyPotato</string>
     <string name="designer">GreenMemory</string>
+    <string name="start">시작</string>
+    <string name="setting">설정</string>
+    <string name="end">끝내기</string>
     <string name="and">&amp;</string>
 </resources>

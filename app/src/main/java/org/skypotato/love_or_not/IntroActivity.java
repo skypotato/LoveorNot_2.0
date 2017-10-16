@@ -1,5 +1,6 @@
 package org.skypotato.love_or_not;
 
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -9,7 +10,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,19 +24,16 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
-    }
 
-    private void init(){
-        Log.i("Function", "init()");
-        startTitleAnim();
+        startAnim();
     }
-    private void startTitleAnim(){
-        LinearLayout laTitle = (LinearLayout) findViewById(R.id.laTitle);
+    private void startAnim(){
+        LinearLayout laTitle  = (LinearLayout)findViewById(R.id.laTitle);
 
         /* anim 폴더 안에 정의되어 있는 애니메이션 액션 정보를 로딩한다. */
-        Animation animlaTitle = AnimationUtils.loadAnimation(this, R.anim.spreadout);
-        /* Animation 상태를 확인할 listener를 등록한다. */
-        animlaTitle.setAnimationListener(new Animation.AnimationListener() {
+        Animation animSpreadOut = AnimationUtils.loadAnimation(this, R.anim.spreadout);
+
+        animSpreadOut.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
                 Log.i("Animation", "anim : spreadout.xml Start");
@@ -42,8 +42,7 @@ public class IntroActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 Log.i("Animation", "anim : spreadout.xml End");
-                startEdtTitleAnim();
-                /* 2초 딜레이 후 화면전환을 한다. */
+                startMainActivity();
             }
 
             @Override
@@ -51,46 +50,8 @@ public class IntroActivity extends AppCompatActivity {
                 Log.i("Animation", "anim : spreadout.xml Repeat");
             }
         });
-        /* Animation을 시작한다. */
-        laTitle.startAnimation(animlaTitle);
-    }
+        laTitle.startAnimation(animSpreadOut);
 
-    private void startEdtTitleAnim(){
-        TextView edtTitle = (TextView)findViewById(R.id.edtTitle);
-        TextView edtSubTitle = (TextView)findViewById(R.id.edtSubTitle);
-
-        Animation animFaidIn = AnimationUtils.loadAnimation(this, R.anim.faidin);
-        /* Animation 상태를 확인할 listener를 등록한다. */
-        animFaidIn.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-                Log.i("Animation", "anim : spreadout.xml Start");
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                Log.i("Animation", "anim : spreadout.xml End");
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-                Log.i("Animation", "anim : spreadout.xml Repeat");
-            }
-        });
-        /* Animation을 시작한다. */
-        edtTitle.startAnimation(animFaidIn);
-        edtSubTitle.startAnimation(animFaidIn);
-    }
-
-    private boolean startFadeInAnim(View view){
-        /* 기본값 False */
-        boolean result = false;
-
-        Animation animFadeIn = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
-        view.startAnimation(animFadeIn);
-
-        /* 결과리턴 */
-        return result;
     }
 
     private void startMainActivity(){
@@ -105,4 +66,9 @@ public class IntroActivity extends AppCompatActivity {
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
+    /* 폰트적용 */
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(TypekitContextWrapper.wrap(newBase));
+    }
 }
