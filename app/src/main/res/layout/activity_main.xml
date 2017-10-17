@@ -6,51 +6,53 @@
     tools:context="org.skypotato.love_or_not.MainActivity">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/background_main">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20sp"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:orientation="vertical"
+            android:padding="20sp">
+
             <Button
                 android:id="@+id/btStart"
-                android:background="@drawable/background_text_brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/background_text_brown"
+                android:text="@string/main_menu_001"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:text="@string/start"/>
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btSetting"
-                android:background="@drawable/background_text_brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/background_text_brown"
+                android:text="@string/main_menu_002"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:text="@string/setting" />
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btEnd"
-                android:background="@drawable/background_text_brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/background_text_brown"
+                android:text="@string/main_menu_003"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:text="@string/end" />
+                android:textStyle="bold" />
         </LinearLayout>
 
         <Button
-            android:id="@+id/button6"
-            android:background="@drawable/helpicon"
+            android:id="@+id/btHelp"
             android:layout_width="100sp"
             android:layout_height="100sp"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
+            android:layout_centerVertical="true"
+            android:background="@drawable/helpicon" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

@@ -1,10 +1,17 @@
 <resources>
-    <string name="app_name">Love or Not</string>
-    <string name="sub_app_name">(Flower Fortune-Telling)</string>
-    <string name="developer">SkyPotato</string>
-    <string name="designer">GreenMemory</string>
-    <string name="start">Start</string>
-    <string name="setting">Setting</string>
-    <string name="end">End</string>
-    <string name="and">&amp;</string>
+    <string name="app_name" translatable="false">Love or Not</string>
+    <string name="sub_app_name" translatable="false">(Flower Fortune-Telling)</string>
+    <string name="developer" translatable="false">SkyPotato</string>
+    <string name="designer" translatable="false">GreenMemory</string>
+    <string name="and" translatable="false">&amp;</string>
+
+    <string name="main_menu_001">Start</string>
+    <string name="main_menu_002">Setting</string>
+    <string name="main_menu_003">End</string>
+
+    <string name="setting_title_001">Starting Screen</string>
+    <string name="setting_title_002">Data Management</string>
+    <string name="setting_radio_001">Selection List</string>
+    <string name="setting_radio_002">Flower Selection</string>
+    <string name="setting_button_001">Delete Stored Data</string>
 </resources>

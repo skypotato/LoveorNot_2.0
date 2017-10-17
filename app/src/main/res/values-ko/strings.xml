@@ -1,10 +1,12 @@
 <resources>
-    <string name="app_name" translatable="false"/>
-    <string name="sub_app_name" translatable="false"/>
-    <string name="developer" translatable="false"/>
-    <string name="designer" translatable="false"/>
-    <string name="start">시작</string>
-    <string name="setting">설정</string>
-    <string name="end">끝내기</string>
-    <string name="and" translatable="false"/>
+
+    <string name="main_menu_001">시작</string>
+    <string name="main_menu_002">설정</string>
+    <string name="main_menu_003">끝내기</string>
+
+    <string name="setting_title_001">시작화면</string>
+    <string name="setting_title_002">데이터 관리</string>
+    <string name="setting_radio_001">선택목록</string>
+    <string name="setting_radio_002">꽃 선택</string>
+    <string name="setting_button_001">저장된 데이터 삭제</string>
 </resources>
