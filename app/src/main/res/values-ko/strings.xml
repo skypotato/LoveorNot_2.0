@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name" translatable="false"/>
+    <string name="sub_app_name" translatable="false"/>
+    <string name="developer" translatable="false"/>
+    <string name="designer" translatable="false"/>
+    <string name="start">시작</string>
+    <string name="setting">설정</string>
+    <string name="end">끝내기</string>
+    <string name="and" translatable="false"/>
+</resources>
