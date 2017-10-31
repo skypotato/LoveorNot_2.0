@@ -15,62 +15,63 @@
         tools:layout_editor_absoluteY="0dp">
 
 
-            <LinearLayout
+        <LinearLayout
+            android:id="@+id/laTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_text_pink"
+            android:orientation="vertical"
+            android:padding="30sp">
+
+            <TextView
+                android:id="@+id/edtTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/laTitle"
-                android:background="@drawable/background_text_pink"
-                android:orientation="vertical"
-                android:padding="30sp">
-                    <TextView
-                        android:id="@+id/edtTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/app_name"
-                        android:textAlignment="center"
-                        android:textSize="40sp" />
+                android:text="@string/app_name"
+                android:textAlignment="center"
+                android:textSize="40sp" />
 
-                    <TextView
-                        android:id="@+id/edtSubTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/sub_app_name"
-                        android:textAlignment="center"
-                        android:textSize="24sp" />
-            </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="120sp" />
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/edtSubTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/edtDeveloper"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/developer"
-                    android:textAlignment="center"
-                    android:textColor="#5B9BD5" />
-
-                <TextView
-                    android:id="@+id/edtAnd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/and"
-                    android:textAlignment="center"
-                    android:textColor="#4D5C70" />
-
-                <TextView
-                    android:id="@+id/edtDesigner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/designer"
-                    android:textAlignment="center"
-                    android:textColor="#FCBBB8" />
-            </LinearLayout>
+                android:text="@string/sub_app_name"
+                android:textAlignment="center"
+                android:textSize="24sp" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="120sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/edtDeveloper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/developer"
+                android:textAlignment="center"
+                android:textColor="#5B9BD5" />
+
+            <TextView
+                android:id="@+id/edtAnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/and"
+                android:textAlignment="center"
+                android:textColor="#4D5C70" />
+
+            <TextView
+                android:id="@+id/edtDesigner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/designer"
+                android:textAlignment="center"
+                android:textColor="#FCBBB8" />
+        </LinearLayout>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
