@@ -9,4 +9,8 @@
     <string name="setting_radio_001">선택목록</string>
     <string name="setting_radio_002">꽃 선택</string>
     <string name="setting_button_001">저장된 데이터 삭제</string>
+
+    <string name="list_title_001">최근목록 불러오기</string>
+    <string name="list_title_002">선택목록</string>
+    <string name="list_button_001">불러오기</string>
 </resources>

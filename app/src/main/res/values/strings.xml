@@ -18,4 +18,8 @@
     <string name="setting_radio_001">Selection List</string>
     <string name="setting_radio_002">Flower Selection</string>
     <string name="setting_button_001">Delete Stored Data</string>
+
+    <string name="list_title_001">Import Last List</string>
+    <string name="list_title_002">Selection List</string>
+    <string name="list_button_001">Import List</string>
 </resources>
