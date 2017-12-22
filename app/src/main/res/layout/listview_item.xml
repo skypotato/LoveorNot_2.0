@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_text_brown"
+    android:padding="8sp">
+
+    <TextView
+        android:id="@+id/itemText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="임시 데이터"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBlack"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btDelte"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_margin="8sp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/button_back" />
+
+</android.support.constraint.ConstraintLayout>
