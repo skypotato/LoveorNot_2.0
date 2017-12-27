@@ -30,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
            }
        });
 
+       btStart.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               startSelectListActivity();
+           }
+       });
+
        btSetting.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -43,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
                finish();
            }
        });
+    }
+
+    private void startSelectListActivity(){
+        Log.i("Function", "startSettingActivity()");
+        /* 인텐트 생성(현 액티비티, 새로 실행할 액티비티) */
+        Intent intent = new Intent(MainActivity.this, SelectListActivity.class);
+        /* 액티비티 실행 */
+        startActivity(intent);
+        /* 자연스럽게 넘어가도록 Animation 주기 */
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     private void startSettingActivity(){
