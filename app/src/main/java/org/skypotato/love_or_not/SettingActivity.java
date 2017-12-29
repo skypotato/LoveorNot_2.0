@@ -29,6 +29,7 @@ public class SettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         settingView(); // 화면구성
+        getStartSetting();
     }
     // 화면구성
     public void settingView(){
