@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="org.skypotato.love_or_not.SelectListActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,10 +21,9 @@
             android:background="@drawable/button_back" />
 
         <LinearLayout
-            android:layout_below="@id/btBack"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="24sp"
+            android:layout_below="@id/btBack"
             android:orientation="vertical"
             android:padding="8sp">
 
@@ -46,6 +47,7 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,16 +60,16 @@
             <ListView
                 android:id="@+id/listView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <Button
+                android:id="@+id/btOK"
+                android:layout_width="100sp"
+                android:layout_height="50sp"
+                android:layout_gravity="right"
+                android:layout_marginTop="8sp"
+                android:background="@drawable/button_ok" />
         </LinearLayout>
-        <Button
-            android:id="@+id/btOK"
-            android:layout_width="100sp"
-            android:layout_height="50sp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="8sp"
-            android:background="@drawable/button_ok" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
