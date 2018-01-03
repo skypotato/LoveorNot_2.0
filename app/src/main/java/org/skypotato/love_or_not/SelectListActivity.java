@@ -1,18 +1,24 @@
 package org.skypotato.love_or_not;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.tsengvn.typekit.TypekitContextWrapper;
 
+import java.util.Objects;
+
 public class SelectListActivity extends AppCompatActivity {
 
     Button btBack;
+    Button btAdd;
+
+    EditText addText;
 
     ListView listView;
     ListViewAdapter listViewAdapter;
@@ -32,6 +38,11 @@ public class SelectListActivity extends AppCompatActivity {
         listView = (ListView)findViewById(R.id.listView);
         listViewAdapter = new ListViewAdapter(this);
 
+        final View footer = getLayoutInflater().inflate(R.layout.listview_footer, null, false) ;
+        btAdd = (Button) footer.findViewById(R.id.btAdd);
+        addText = (EditText) footer.findViewById(R.id.addText);
+
+        listView.addFooterView(footer);
         listView.setAdapter(listViewAdapter);
 
         for(int i = 0;i<10;i++){
@@ -46,6 +57,18 @@ public class SelectListActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        btAdd.setOnClickListener(new OnSingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                ListData data = new ListData();
+                String strText = addText.getText().toString();
+                if(!Objects.equals(strText.trim(), "")) {
+                    data.strItem = strText;
+                }
+                listViewAdapter.addItem(data);
+            }
+        });
+
         Log.d("start",":::::settingView()...End");
     }
 
