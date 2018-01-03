@@ -59,7 +59,7 @@ public class ListViewAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View view) {
                     if (position < getCount()) {
-                        removeItem(position);
+                        removeItem(position); 
                     }
                 }
             });
