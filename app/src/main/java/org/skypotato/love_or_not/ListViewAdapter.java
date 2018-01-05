@@ -55,19 +55,17 @@ public class ListViewAdapter extends BaseAdapter {
             viewHolder.itemText = (EditText) convertView.findViewById(R.id.itemText);
             viewHolder.btDelete = (Button) convertView.findViewById(R.id.btDelte);
 
-            viewHolder.btDelete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (position < getCount()) {
-                        removeItem(position);
-                    }
-                }
-            });
-
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
+
+        viewHolder.btDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                removeItem(position);
+            }
+        });
 
         ListData data = listData.get(position);
 
