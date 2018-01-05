@@ -17,6 +17,7 @@ public class SelectListActivity extends AppCompatActivity {
 
     Button btBack;
     Button btAdd;
+    Button btImport;
 
     EditText addText;
 
@@ -35,6 +36,7 @@ public class SelectListActivity extends AppCompatActivity {
         Log.d("start",":::::settingView()...Start");
 
         btBack = (Button) findViewById(R.id.btBack);
+        btImport = (Button) findViewById(R.id.btImport);
         listView = (ListView)findViewById(R.id.listView);
         listViewAdapter = new ListViewAdapter(this);
 
@@ -45,16 +47,16 @@ public class SelectListActivity extends AppCompatActivity {
         listView.addFooterView(footer);
         listView.setAdapter(listViewAdapter);
 
-        for(int i = 0;i<10;i++){
-            ListData data = new ListData();
-            data.strItem = "리스트 "+i;
-            listViewAdapter.addItem(data);
-        }
-
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+        btBack.setOnClickListener(new OnSingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+
             }
         });
         btAdd.setOnClickListener(new OnSingleClickListener() {
