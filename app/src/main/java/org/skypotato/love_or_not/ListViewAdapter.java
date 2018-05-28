@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.List;
  */
 
 public class ListViewAdapter extends BaseAdapter {
-    private Context context = null;
+    private Context context;
     private ArrayList<ListData> listData = new ArrayList<>();
 
     ListViewAdapter(Context context) {
@@ -50,10 +51,10 @@ public class ListViewAdapter extends BaseAdapter {
 
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             assert inflater != null;
-            convertView = inflater.inflate(R.layout.listview_item, null);
+            convertView = inflater.inflate(R.layout.listview_item, parent);
 
-            viewHolder.itemText = (EditText) convertView.findViewById(R.id.itemText);
-            viewHolder.btDelete = (Button) convertView.findViewById(R.id.btDelte);
+            viewHolder.itemText = convertView.findViewById(R.id.itemText);
+            viewHolder.btDelete = convertView.findViewById(R.id.btDelte);
 
             convertView.setTag(viewHolder);
         } else {
@@ -76,6 +77,12 @@ public class ListViewAdapter extends BaseAdapter {
 
     void addItem(ListData data) {
         Log.d("start", ":::::addItem()...Start");
+        // 빈 값이 들어올 경우 메시지 처리
+        if(data.strItem == null || "".equals(data.strItem.trim())) {
+            Toast toast = Toast.makeText(context,"목록에 추가할 값을 입력해주세요.",Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
         listData.add(data);
         dataChange();
         Log.d("start", ":::::addItem()...End");
@@ -89,6 +96,7 @@ public class ListViewAdapter extends BaseAdapter {
         Log.d("start", ":::::removeItem()...End");
     }
 
+    // ListView Data가 변경되었을 때 호출해야하는 Function
     private void dataChange() {
         Log.d("start", ":::::dataChange()...Start");
         this.notifyDataSetChanged();
